@@ -13,28 +13,38 @@ const FirstVideo = () => {
         trigger: '.first-vd-wrapper',
         start: 'top top',
         end: '+=200% top',
-        scrub: true,
+        scrub: 1,
         pin: true,
       }
     })
 
-    tl.to('.hero-section', { delay: 0.5, opacity: 0, ease: 'power1.inOut' });
-    tl.to('.first-vd-wrapper', { opacity: 1, duration: 2, ease: 'power1.inOut' });
+    tl.to('.hero-section', { delay: 0.5, opacity: 0, ease: 'none' });
+    tl.to('.first-vd-wrapper', { opacity: 1, duration: 2, ease: 'none' });
 
-    videoRef.current.onloadedmetadata = () => {
-      tl.to(videoRef.current, { currentTime: videoRef.current.duration, duration: 3, ease: 'power1.inOut' }, '<');
+    const initVideoScrub = () => {
+      if (videoRef.current && videoRef.current.duration) {
+        tl.to(videoRef.current, { currentTime: videoRef.current.duration, duration: 3, ease: 'none' }, '<');
+      }
+    };
+
+    if (videoRef.current) {
+      if (videoRef.current.readyState >= 1) {
+        initVideoScrub();
+      } else {
+        videoRef.current.onloadedmetadata = initVideoScrub;
+      }
     }
   }, []);
 
   return (
     <section className="first-vd-wrapper">
       <div className="h-dvh">
-        <video 
+        <video
           ref={videoRef}
           muted
           playsInline
           preload="auto"
-          src="/videos/output1.mp4"
+          src="/vids/vid1_intra.mp4"
           className="first-vd"
         />
       </div>

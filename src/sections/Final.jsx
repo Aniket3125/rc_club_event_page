@@ -13,36 +13,46 @@ const Final = () => {
         trigger: '.final',
         start: 'top top',
         end: '90% top',
-        scrub: true,
+        scrub: 1.5,
         pin: true,
       }
     })
 
-    const tl = gsap.timeline({ 
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.final',
         start: 'top 80%',
         end: '90% top',
-        scrub: true,
+        scrub: 1.5,
       }
     })
 
-    tl.to('.final-content', { opacity: 1, duration: 1, scale: 1, ease: 'power1.inOut' });
+    tl.to('.final-content', { opacity: 1, duration: 1, scale: 1, ease: 'none' });
 
-    videoRef.current.onloadedmetadata = () => {
-      tl.to(videoRef.current, { currentTime: videoRef.current.duration, duration: 3, ease: 'power1.inOut' }, '<');
+    const initVideoScrub = () => {
+      if (videoRef.current && videoRef.current.duration) {
+        tl.to(videoRef.current, { currentTime: videoRef.current.duration, duration: 3, ease: 'none' }, '<');
+      }
+    };
+
+    if (videoRef.current) {
+      if (videoRef.current.readyState >= 1) {
+        initVideoScrub();
+      } else {
+        videoRef.current.onloadedmetadata = initVideoScrub;
+      }
     }
-  });
+  }, []);
 
   return (
     <section className="final">
       <div className="final-content size-full">
-        <video 
+        <video
           ref={videoRef}
           muted
           playsInline
           preload="auto"
-          src="/videos/output3.mp4"
+          src="/videos/close2_intra.mp4"
           className="size-full object-cover"
         />
       </div>
