@@ -27,21 +27,21 @@ const Jason = () => {
   return (
     <section className="jason">
       <div className="max-w-lg jason-content">
-        <h1>ELECTRO TEKKEN</h1>
-        <h2>Electro Tekken transforms real-world movements into high-precision gameplay.</h2>
-        <p>Using motion tracking and adaptive machine learning, your physical punches, kicks, and combos control the action for an immersive combat experience.</p>
+        <h1>FAlCON'S GRID</h1>
+        <h2>Build your own drone, master the controls, and race.</h2>
+        <p>Navigate through challenging obstacles where unmatched speed, precision, and piloting skills ultimately determine who conquers the high-stakes grid and claims victory.</p>
 
         <div className="jason-2">
-          <img src="/img/taken2.png" />
+          <img src="/img/fl11.png" />
         </div>
       </div>
 
       <div className="space-y-5 mt-96 img-box">
         <div className="jason-1">
-          <img src="/img/jason-1.webp" />
+          <img src="/img/fl1.jpeg" />
         </div>
         <div className="jason-3">
-          <img src="/img/tekn1.jpg" />
+          <img src="/img/fl3.jpeg" />
         </div>
       </div>
     </section>

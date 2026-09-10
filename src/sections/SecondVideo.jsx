@@ -1,5 +1,6 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
 import { useRef } from "react";
 
 const SecondVideo = () => {
@@ -22,7 +23,8 @@ const SecondVideo = () => {
 
     const initVideoScrub = () => {
       if (videoRef.current && videoRef.current.duration) {
-        tl.to(videoRef.current, { currentTime: videoRef.current.duration, duration: 3, ease: 'none' }, '<')
+        tl.to(videoRef.current, { currentTime: videoRef.current.duration, duration: 3, ease: 'none' }, '<');
+        ScrollTrigger.refresh();
       }
     };
 
@@ -43,7 +45,7 @@ const SecondVideo = () => {
           muted
           playsInline
           preload="auto"
-          src="/videos/mid2_intra.mp4"
+          src="/vids/robwarvid_intra.mp4"
           className="size-full object-cover second-vd"
           style={{
             objectPosition: '15% 0%'
