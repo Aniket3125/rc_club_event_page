@@ -100,8 +100,15 @@ main {
     }
   }
 
-  .first-vd-wrapper, .first-vd-wrapper-2, .first-vd-wrapper-3, .first-vd-wrapper-4 {
-    .first-vd, .first-vd-2, .first-vd-3, .first-vd-4 {
+  .first-vd-wrapper,
+  .first-vd-wrapper-2,
+  .first-vd-wrapper-3,
+  .first-vd-wrapper-4 {
+
+    .first-vd,
+    .first-vd-2,
+    .first-vd-3,
+    .first-vd-4 {
       @apply size-full object-cover md:[object-position:50%_center] [object-position:75%_center];
     }
   }
@@ -118,7 +125,10 @@ main {
     }
   }
 
-  .jason, .jason-sec-2, .jason-sec-3, .jason-sec-4 {
+  .jason,
+  .jason-sec-2,
+  .jason-sec-3,
+  .jason-sec-4 {
     @apply relative z-10 lg:ps-40 2xl:ps-80 ps-10 py-40 mt-60 flex lg:flex-row flex-col justify-between gap-5 w-dvw overflow-x-hidden;
 
     h1 {
@@ -158,11 +168,15 @@ main {
     }
   }
 
-  .lucia, .second-vd-wrapper-2, .second-vd-wrapper-3 {
+  .lucia,
+  .second-vd-wrapper-2,
+  .second-vd-wrapper-3 {
     @apply relative;
   }
 
-  .lucia-life, .lucia-life-sec-2, .lucia-life-sec-3 {
+  .lucia-life,
+  .lucia-life-sec-2,
+  .lucia-life-sec-3 {
     @apply relative z-10 py-40 mt-60 flex lg:flex-row flex-col justify-between gap-5 w-dvw overflow-x-hidden;
 
     h1 {
